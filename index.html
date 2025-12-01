@@ -20,8 +20,9 @@
   <div class="container">
     <h1>Employee Yes/No Form</h1>
 
-    <!-- Use the NEW Web App URL here -->
+    <!-- Add an id so we can access the form in JS -->
     <form
+      id="employeeForm"
       action="https://script.google.com/macros/s/AKfycbxDs3rL5xUTHZct8Tut9_f0h23zoupkGK613CbyQhmJcmwJi1vSQwMly5VqqpVMHm2RoQ/exec"
       method="GET"
       target="_blank">
@@ -65,5 +66,15 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+
+  <script>
+    const form = document.getElementById('employeeForm');
+
+    // After the browser submits the form, clear all fields
+    form.addEventListener('submit', () => {
+      // Use a small delay so values are sent before we reset
+      setTimeout(() => form.reset(), 100);
+    });
+  </script>
 </body>
 </html>
